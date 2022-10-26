@@ -1,0 +1,8 @@
+
+/// setting up basic user info table. Need id to be primary and username to be unique //////
+
+CREATE TABLE users (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR (255) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW()
+    );
