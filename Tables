@@ -44,3 +44,11 @@ CREATE TABLE likes (
 
 ///////////// setting up the follower/followee relationship table. need separate id for the user being followed and the user following. both ids need to reference the user id. additioally need primary key to make sure that the relationship is unique and users cannot follow themselves for example //////////
 
+CREATE TABLE follows (
+    follower_id INT NOT NULL,
+    followee_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY (follower_id) REFERENCES users(id),
+    FOREIGN KEY (followee_id) REFERENCES users(id),
+    PRIMARY KEY (follower_id, followee_id)
+);
