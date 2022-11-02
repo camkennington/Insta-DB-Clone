@@ -55,7 +55,7 @@ CREATE TABLE follows (
 
 ///////////setting up table for storeing hashtag data connected to photos. requires two tables///////
 	
-	----- tags table: has the actual hashtag info. needs a unique id for each hashtag as well as the actual name and the created at ----
+------- tags table: has the actual hashtag info. needs a unique id for each hashtag as well as the actual name and the created at ------
 	
 	CREATE TABLE tags (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -63,7 +63,7 @@ CREATE TABLE follows (
     created_at TIMESTAMP DEFAULT NOW()
 );
 
-------- photo tag table. new table that will actuallly allow us to associate each unique hashtag to a unique phot that was posted -----
+------- photo tag table. new table that will actuallly allow us to associate each unique hashtag to a unique phot that was posted -------
 
 CREATE TABLE photo_tags (
 	photo_id INT NOT NULL,
