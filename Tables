@@ -40,3 +40,7 @@ CREATE TABLE likes (
     FOREIGN KEY(photo_id) REFERENCES photos(id),
     PRIMARY KEY(user_id, photo_id)
 );
+
+
+///////////// setting up the follower/followee relationship table. need separate id for the user being followed and the user following. both ids need to reference the user id. additioally need primary key to make sure that the relationship is unique and users cannot follow themselves for example //////////
+
