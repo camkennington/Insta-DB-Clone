@@ -29,3 +29,5 @@ CREATE TABLE comments (
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (photo_id) REFERENCES photos (id)
 );
+
+////////// setting up table for likes that will be attached to photos. needs  to be attached to specific photo and specific user for each like. additioanlly need a primary key with the user/photo id combo so that no two likes can be replicated/////////
