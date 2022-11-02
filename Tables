@@ -52,3 +52,25 @@ CREATE TABLE follows (
     FOREIGN KEY (followee_id) REFERENCES users(id),
     PRIMARY KEY (follower_id, followee_id)
 );
+
+///////////setting up table for storeing hashtag data connected to photos. requires two tables///////
+	
+	----- tags table: has the actual hashtag info. needs a unique id for each hashtag as well as the actual name and the created at ----
+	
+	CREATE TABLE tags (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tag_name VARCHAR(255) UNIQUE,
+    created_at TIMESTAMP DEFAULT NOW()
+);
+
+------- photo tag table. new table that will actuallly allow us to associate each unique hashtag to a unique phot that was posted -----
+
+CREATE TABLE photo_tags (
+	photo_id INT NOT NULL,
+    tag_id INT NOT NULL,
+    FOREIGN KEY(photo_id) REFERENCES photos(id),
+    FOREIGN KEY(tag_id) REFERENCES tags(id),
+    PRIMARY KEY (photo_id, tag_id)  
+);
+
+	
