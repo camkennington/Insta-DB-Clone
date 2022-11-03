@@ -45,3 +45,13 @@ ORDER  BY total DESC;
 SELECT
 	(SELECT COUNT(*) FROM photos) /
 	(SELECT COUNT(*) FROM users) AS AVG;
+	
+--------- Find the most popular/most used hashtags ------------
+
+SELECT tags.tag_name,
+       Count(*)
+FROM   photo_tags
+       JOIN tags
+         ON tags.id = photo_tags.tag_id
+GROUP  BY tags.id
+ORDER  BY Count(*) DESC; 
