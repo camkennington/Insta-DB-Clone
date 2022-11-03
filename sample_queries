@@ -15,6 +15,9 @@ GROUP BY Day
 ORDER BY Total DESC;
 
 
+
+
+
 ------ Identify Inactive users who have not posted photos --------
 
 SELECT 
@@ -25,6 +28,9 @@ SELECT
     LEFT JOIN photos
     ON users.id = photos.user_id
     WHERE photos.id IS NULL;
+
+
+
 
 ---------- Finding photo and user with the most likes -----------
 
@@ -40,12 +46,18 @@ FROM   photos
 GROUP  BY photos.id
 ORDER  BY total DESC; 
 
+
+
+
 --------- Calculating average number of photos per user ----------
 
 SELECT
 	(SELECT COUNT(*) FROM photos) /
 	(SELECT COUNT(*) FROM users) AS AVG;
-	
+
+
+
+
 --------- Find the most popular/most used hashtags ------------
 
 SELECT tags.tag_name,
