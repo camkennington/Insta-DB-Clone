@@ -3,3 +3,13 @@
 SELECT * FROM users
 ORDER BY created_at
 LIMIT 5;
+
+
+----- Most popular registration date -----
+
+SELECT 
+    DAYNAME(created_at) AS Day,
+    COUNT(*) AS Total
+FROM users
+GROUP BY Day
+ORDER BY Total DESC;
