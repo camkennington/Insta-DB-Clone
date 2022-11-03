@@ -39,3 +39,9 @@ FROM   photos
                ON photos.user_id = users.id
 GROUP  BY photos.id
 ORDER  BY total DESC; 
+
+--------- Calculating average number of photos per user ----------
+
+SELECT
+	(SELECT COUNT(*) FROM photos) /
+	(SELECT COUNT(*) FROM users) AS AVG;
