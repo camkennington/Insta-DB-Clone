@@ -30,8 +30,6 @@ SELECT
     WHERE photos.id IS NULL;
 
 
-
-
 ---------- Finding photo and user with the most likes -----------
 
 SELECT username,
